@@ -81,7 +81,7 @@ const App = () => {
           <input type="password" name='password' onBlur={handleInput} />
           {formerror.password && <p className='password-error'>{formerror.password}</p>}
           <label>Contact Number</label>
-          <input type="text" name='contactNo' onBlur={handleInput} />
+          <input type="number" name='contactNo' onBlur={handleInput} />
           {formerror.contactNo && <p className='contactNo-error'>{formerror.contactNo}</p>}
           <button onClick={handlesubmit}>Submit</button>
         </section>
