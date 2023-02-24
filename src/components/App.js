@@ -25,7 +25,8 @@ const App = () => {
 
     const ret = validation();
     if (ret) {
-      setStatus(true)
+      setStatus(true);
+      setFormInput(formobj);
     }
   }
 
@@ -72,16 +73,16 @@ const App = () => {
         <h1>Registeration Form</h1>
         <section>
           <label>Username</label>
-          <input type="text" name='username' onBlur={handleInput} />
+          <input type="text" name='username' onChange={handleInput} value={formInput.username} />
           {formerror.username && <p className='username-error'>{formerror.username}</p>}
           <label>Email</label>
-          <input type="email" name='email' onBlur={handleInput}/>
+          <input type="email" name='email' onChange={handleInput} value={formInput.email}/>
           {formerror.email && <p className='email-error'>{formerror.email}</p>}
           <label>Password</label>
-          <input type="password" name='password' onBlur={handleInput} />
+          <input type="password" name='password' onChange={handleInput} value={formInput.password}/>
           {formerror.password && <p className='password-error'>{formerror.password}</p>}
           <label>Contact Number</label>
-          <input type="number" name='contactNo' onBlur={handleInput} />
+          <input type="number" name='contactNo' onChange={handleInput} value={formInput.contactNo} />
           {formerror.contactNo && <p className='contactNo-error'>{formerror.contactNo}</p>}
           <button onClick={handlesubmit}>Submit</button>
         </section>
